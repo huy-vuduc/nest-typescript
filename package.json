@@ -1,0 +1,32 @@
+{
+  "name": "webpack-nest-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
+  },
+  "scripts": {
+    "lint": "eslint --fix --max-warnings=0 --ext .ts,.tsx,.js,.jsx .",
+    "test": "concurrently -p \"[{name}]\" -n \"API,DASHBOARD\" -c \"magenta.bold,blue.bold\" \"npm run --prefix api test\" \"npm run --prefix dashboard test\"",
+    "install": "npm run --prefix api install:dependencies && npm run --prefix dashboard install:dependencies && npm run --prefix web install:dependencies",
+    "build": "concurrently -p \"[{name}]\" -n \"API,DASHBOARD\" -c \"magenta.bold,blue.bold,yellow.bold\" \"npm run --prefix api build\" \"npm run --prefix dashboard build\"",
+    "start-all:dev": "concurrently -p \"[{name}]\" -n \"API,DASHBOARD\" -c \"magenta.bold,blue.bold,yellow.bold\" \"npm run --prefix api start:dev\" \"npm run --prefix dashboard start:dev\"",
+    "start-all:prod": "concurrently -p \"[{pid}][{name}]\" -n \"API,DASHBOARD\" -c \"magenta.bold,blue.bold,yellow.bold\" \"npm run --prefix api start:prod\" \"npm run --prefix dashboard start:prod\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "eslint": "^7.8.1",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "prettier": "^2.1.1",
+    "react": "^16.13.1",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.2.2"
+  }
+}

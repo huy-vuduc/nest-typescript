@@ -1,0 +1,16 @@
+{
+  "type": "mysql",
+  "url": "mysql://vlm3ldx3ywgvg5bl:v5l2gmsnwra4bh32@jsk3f4rbvp8ayd7w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jgjnylm8f3zo7k2u",
+  "entities": [
+    "dist/**/*.entity.js"
+  ],
+  "migrations": [
+    "dist/migration/**/*.js"
+  ],
+  "cli": {
+    "migrationsDir": "src/migration"
+  },
+  "charset": "utf8mb4_unicode_ci",
+  "cache": true,
+  "logging": true
+}
